@@ -1,0 +1,21 @@
+let nombre="Luis";
+let edad=30;
+let ciudad="Madrid";
+let equipoFavorito="Real Madrid";
+let CI="12345678A";
+console.log("Nombre: " + nombre);
+console.log("Edad: " + edad);
+console.log("Ciudad: " + ciudad);
+console.log("Equipo Favorito: " + equipoFavorito);
+console.log("Cédula de Identidad: " + CI);
+
+let nombre1="Marian";
+let edad1=23;
+let ciudad1="Barquisimeto";
+let colorFavorito="Nude";
+let personalidad="Loquita";
+console.log("Nombre: "+nombre1);
+console.log("Edad: "+edad1);
+console.log("Ciudad: "+ciudad1);
+console.log("Color Favorito: "+colorFavorito);
+console.log("Personalidad: "+personalidad);
