@@ -20,3 +20,7 @@ let estudiante = {
 console.log(estudiante.calcularPromedio());
 console.log(estudiante.mostrarInfo());
 
+for (Propiedad in estudiante){
+    console.log(Propiedad);
+    console.log(estudiante[Propiedad]);
+}
