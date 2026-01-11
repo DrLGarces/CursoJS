@@ -28,7 +28,7 @@ class Producto{
     }
 
     get id (){
-        return this.id;
+        return this._id;
     }
 
     get nombre (){
