@@ -31,6 +31,10 @@ class Empleado{
     recibirSueldo(){
         return `Se han depositado ${this._sueldoBase} dólares`;
     }
+
+    toString(){
+        return this.datosGenerales();
+    }
 }
 
 class Programador extends Empleado{
@@ -79,3 +83,6 @@ console.log("===============================================");
 console.log(Ger1.datosGenerales());
 Ger1.dirigir();
 console.log(Ger1.datosGenerales());
+console.log("==============================================================================");
+
+console.log(" "+Dev1);
