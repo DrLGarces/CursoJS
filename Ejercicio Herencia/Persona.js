@@ -38,7 +38,6 @@ class Persona{
         return `[ID]: ${this._idPersona} Nombre Completo: ${this._nombre} ${this._apellido} edad: ${this._edad}`;
     }
 }
-
 class Empleado extends Persona{
     static contadorEmpleados = 0;
     constructor(nombre, apellido, edad, sueldo){
@@ -86,7 +85,6 @@ class Cliente extends Persona{
     }
 
 }
-
 
 
 
