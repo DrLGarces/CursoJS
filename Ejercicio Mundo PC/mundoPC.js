@@ -31,7 +31,7 @@ class Raton extends DispositivoEntrada{
         this._idRaton = Raton.contadorRatones;
     }
     toString(){
-        return `[ID Raton]:${this._idRaton}[Tipo]: ${this._tipoEntrada}, [Marca]: ${this._marca}
+        return `[ID Raton]:${this._idRaton}, [Tipo]: ${this._tipoEntrada}, [Marca]: ${this._marca}
         `;
     }
 
@@ -110,7 +110,9 @@ class Computadora{
         this._raton = raton;
     }
     toString(){
-        return `[ID PC]: ${this._idComputadora} [Nombre]: ${this._nombre} [Monitor]: ${this._monitor} [Teclado]: ${this._teclado} [Raton]: ${this._raton}`;
+        return `
+        [ID PC]: ${this._idComputadora}, [Nombre]: ${this._nombre} 
+        [Monitor]: ${this._monitor} [Teclado]: ${this._teclado} [Raton]: ${this._raton}`;
     }
 
 }
