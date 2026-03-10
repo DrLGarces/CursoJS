@@ -123,12 +123,21 @@ class Orden{
         this._idOrden = Orden.contadorOrdenes;
         this._computadoras = [];
     }
-    agregarComputadora(Computadora){
-        this._computadoras.push(Computadora);
+    agregarComputadora(Compu){
+        
+            if(Compu instanceof Computadora){
+                this._computadoras.push(Compu);
+            }else{
+                throw  "El Objeto envíado no es de tipo Computadora, por favor envíe un objeto Computadora.";
+            }
     }
     toString(){
+        let computersAll= ""
+        for (let Compu of this._computadoras) {
+            computersAll = computersAll+Compu;
+        }
         return `[ID Orden]: ${this._idOrden}
-        [Computadoras]: ${this._computadoras}`;
+        [Computadoras]: ${computersAll}`;
     }
 }
 
@@ -153,7 +162,11 @@ let compu2 = new Computadora("PC-Marian",m2,t2,r2)
 // console.log(compu2.toString());
 
 let orden1 = new Orden();
-orden1.agregarComputadora(compu1);
+try{
+    orden1.agregarComputadora(compu1);
+}catch(error){
+    console.log(error);
+}
 orden1.agregarComputadora(compu2);
 
 console.log(orden1.toString());
