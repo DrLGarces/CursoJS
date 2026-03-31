@@ -26,7 +26,7 @@ const funcion_de_2segundos = () => {
 }
 
 const consultar_pokemon = async () => {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/ditto', {method: 'GET'});
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/2', {method: 'GET'});
     const data = response.json();
     return data;
 }
