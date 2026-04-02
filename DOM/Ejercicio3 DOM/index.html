@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificador de Parrafos</title>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+
+    <h2 class="azulito">Elementos:</h2>
+
+    <p class="textos">Tarea 1: correr</p>
+    <p class="textos">Tarea 2: estudiar</p>
+    <p class="textos">Tarea 3: lavar</p>
+
+    <button class="azulito" id="btn_destacar">Destacar tareas</button>
+
+    
+    <script>
+        let parrafos = document.getElementsByTagName('p');        
+        let btnDestacar = document.getElementById("btn_destacar");
+        
+
+    
+
+        btnDestacar.addEventListener("click",()=>{
+            for(let i = 0; i<parrafos.length; i++){
+                parrafos[i].classList.toggle("resaltado");
+            }
+        });
+
+        console.log(parrafos.length);
+    </script>
+</body>
+</html>

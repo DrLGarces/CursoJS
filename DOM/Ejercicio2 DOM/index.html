@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificador de Parrafos</title>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+
+    <p>Tarea 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nobis dolores libero saepe? Expedita quae, quod debitis maiores quisquam totam laborum obcaecati minima veritatis quibusdam illo, veniam accusamus distinctio earum.</p>
+
+    <p>Tarea 2: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat deleniti enim, accusantium fugit ipsum iusto quo voluptate nihil beatae officia ut saepe voluptates aliquam consectetur facilis, modi alias rem sunt.</p>
+
+    <p>Tarea 3: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum laudantium pariatur consequuntur, nostrum corporis quisquam! Consequuntur magnam accusantium error, animi provident possimus perspiciatis neque amet repellat vero dolores saepe ratione?</p>
+
+    <button id="btn_destacar">Destacar tareas</button>
+
+    <button id="btn_destacar_verde">Destacar pero en verde</button>
+    <script>
+        let parrafos = document.getElementsByTagName('p');        
+        let btnDestacar = document.getElementById("btn_destacar");
+        let btnDestacarVerde = document.getElementById("btn_destacar_verde");
+
+        const cambiarColor = (color) =>{
+            for(let i=0;i<parrafos.length;i++){
+            parrafos[i].style.backgroundColor = color;
+            parrafos[i].style.color = "black";
+            parrafos[i].style.fontWeight = "bold";
+        }
+        }
+
+        btnDestacar.addEventListener("click",()=>cambiarColor("yellow"));
+        btnDestacarVerde.addEventListener("click", ()=>cambiarColor("green"));
+
+        console.log(parrafos.length);
+    </script>
+</body>
+</html>
