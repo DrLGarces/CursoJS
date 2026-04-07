@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lista de supermercado</title>
+</head>
+<body>
+
+    <h1>Esta es la lista</h1>
+    <div class="container">
+        <p class="comida">Harina</p>
+        <p class="comida">Azucar</p>
+        <p class="comida">Arroz</p>
+        <p class="limpieza">Jabón</p>
+        <p class="limpieza">Shampoo</p>
+    </div>
+    <div>
+        <button id="btn_limpieza">Limpieza</button>
+        <button id="btn_comida">Comida</button>
+    </div>
+
+    <script>
+        let btnLimpieza = document.getElementById('btn_limpieza');
+        let btnComida = document.getElementById('btn_comida');
+        let pComida = document.getElementsByClassName("comida");
+        let pLimpieza = document.querySelectorAll("p.limpieza");
+
+        btnLimpieza.addEventListener("click",()=>{
+            for(let i = 0; i < pLimpieza.length; i++){
+                pLimpieza[i].classList.add("fondo-azul");
+            }
+        });
+        
+        btnComida.addEventListener("click",()=>{
+            for(let i = 0; i < pComida.length; i++){
+                pComida[i].classList.add("fondo-verde");
+            }
+        });
+
+    </script>
+</body>
+</html>

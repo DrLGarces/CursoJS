@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de tareas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de tareas</h1>
+        <div id="lista-tareas">
+            <p class="textos">Tarea 1: correr</p>
+            <p class="textos">Tarea 2: estudiar</p>
+            <p class="textos">Tarea 3: lavar</p>
+        </div>
+        <div class="controles">
+            <button id="btn-agregar">Agregar Tarea</button>
+            <button id="btn-contar">Contar Tareas</button>
+        </div>
+    </div>
+    
+    <script>
+        // 1. Seleccionamos elementos iniciales
+const botonContar = document.getElementById('btn-contar');
+const botonAgregar = document.getElementById('btn-agregar');
+const contenedorTareas = document.getElementById('lista-tareas');
+
+// 2. Aquí creamos las dos listas (Una viva y otra estática)
+const listaViva = document.getElementsByClassName('tarea');
+const listaEstatica = document.querySelectorAll('.tarea');
+
+// FUNCIÓN PARA AGREGAR UNA NUEVA TAREA AL HTML
+botonAgregar.addEventListener('click', () => {
+    const nuevaTarea = document.createElement('div');
+    nuevaTarea.className = 'tarea pendiente';
+    nuevaTarea.innerText = 'Nueva tarea generada por JS';
+    contenedorTareas.appendChild(nuevaTarea);
+    console.log('¡Tarea agregada!');
+});
+
+
+// === EL RETO ESTÁ AQUÍ ===
+botonContar.addEventListener('click', () => {
+    
+
+    // PASO A: Muestra en la consola el .length de la "listaViva"
+    console.log(listaViva.length)
+
+    // PASO B: Muestra en la consola el .length de la "listaEstatica"
+    console.log(listaEstatica.length)
+
+    
+    // PASO C (Avanzado): Intenta pintar de color azul el texto de todas 
+    // las tareas usando la "listaEstatica" y un bucle .forEach()
+    // TU CÓDIGO AQUÍ
+    listaEstatica.forEach(tarea => {
+        
+    });
+});
+    </script>
+</body>
+</html>

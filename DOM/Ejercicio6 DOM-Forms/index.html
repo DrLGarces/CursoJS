@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ficha de juego</title>
+</head>
+<body>
+    <div class="container">
+        <form id="registro">
+            Nickname: <input type="text" name="nick">
+            <br>
+            Rango/Nivel: <input type="text" name="rango">
+            <br>
+            Juego Favorito: <input type="text" name="juego">
+        </form>
+        <button onclick="generarFicha()">Generar ficha</button>
+        <div id="ficha" class="ficha">
+
+        </div>
+    </div>
+    <script>
+        
+        const generarFicha = () =>{
+            let formulario = document.forms['registro'];
+            let nickname = formulario['nick'];
+            let rango = formulario['rango'];
+            let juego = formulario['juego'];
+            let text = "Jugador: [" + nickname.value + "] | Nivel: ["+ rango.value +"] | Juego Favorito: [" + juego.value + "]";
+            let ficha = document.getElementById("ficha");
+            ficha.innerHTML = text;
+        }
+    </script>
+</body>
+</html>

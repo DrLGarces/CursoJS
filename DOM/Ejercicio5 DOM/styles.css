@@ -1,0 +1,17 @@
+button{
+    background-color: darkgray;
+    color:navy;
+    
+}
+.fondo-verde{
+    background-color: lightgreen;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:600;
+    color:black;
+}
+.fondo-azul{
+    background-color:skyblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:500 ;
+    color: black;
+}
