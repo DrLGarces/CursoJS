@@ -18,5 +18,24 @@
     <div class="container">
         <p id="mensaje"></p>
     </div>
+
+<script>
+    document.getElementById("username").oninput = validar;
+
+    function validar(){
+        let username = document.forms["formValidador"]["username"];
+        console.log(username.value);
+        if(username.value.length < 5){
+            document.getElementById("username").classList.remove("input_ok");
+            document.getElementById("username").classList.add("input_error");
+            document.getElementById("mensaje").innerHTML = "Texto muy corto";
+        }else{
+            document.getElementById("username").classList.remove("input_error");
+            document.getElementById("username").classList.add("input_ok");
+            document.getElementById("mensaje").innerHTML = "¡Nickname EPICO!";
+        }
+    }
+
+</script>
 </body>
 </html>
