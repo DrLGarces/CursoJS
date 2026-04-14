@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de clan</title>
+</head>
+<body onload="alerta()">
+    <div class="container">
+        <h1>Validador de nombre</h1>
+        <form id="formclan">
+            Nombre de clan: <input type="text" name="nombre_clan" id="nombre_clan" placeholder="Navegantes23" onchange="validacion(this)">
+        </form>
+        <div id="aviso">
+
+        </div>
+    </div>
+    
+
+<script>
+    function alerta (){
+        alert("Bienvenido al centro de Reclutamiento");
+    }
+    function validacion(nombreClan){
+        if(nombreClan.value.length < 4){
+            document.getElementById("aviso").in
+            nombreClan.value = "";
+            document.getElementById("aviso").innerHTML = "¡Nombre muy corto para un clan!";
+            console.log("Menor a 4")
+        }else{
+            nombreClan.value = nombreClan.value.toUpperCase();
+            document.getElementById("aviso").innerHTML ="";
+        }
+    }
+
+
+</script>
+</body>
+</html>
