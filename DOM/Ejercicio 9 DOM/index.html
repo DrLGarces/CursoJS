@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de clan</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Terminal de operaciones</h1>
+        <form id="form1">
+            Comando: <input type="text" name="comando" id="comando" placeholder="Escriba su comando...">
+            <button id="btn-ejecutar">EJECUTAR</button>
+        </form>
+    </div>
+    <div class="container" id="consola-salida">
+
+    </div>
+    
+
+<script>
+    const comandanteController = {
+        ejecutar: function(comando){
+            if(comando == "/stats"){
+                return("Mostrando estadisticas del clan...");
+            }else if(comando == "/limpiar"){
+                return ("");
+            }else{
+                return("Comando Desconocido");
+            }
+        },
+    }
+
+    let inputComando = document.getElementById("comando");
+    let btnEjecutar = document.getElementById("btn-ejecutar");
+    let consolaSalida = document.getElementById("consola-salida");
+    inputComando.addEventListener("focus",()=>{
+        inputComando.classList.add("foco-terminal");
+    });
+
+    inputComando.addEventListener("blur",()=>{
+        inputComando.classList.remove("foco-terminal");
+    });
+
+    btnEjecutar.addEventListener("mouseover",()=>{
+        btnEjecutar.classList.add("boton-hover");
+    });
+
+    btnEjecutar.addEventListener("mouseout",()=>{
+        btnEjecutar.classList.remove("boton-hover");
+    })
+
+    btnEjecutar.addEventListener("mousedown",()=>{
+        btnEjecutar.classList.add("boton-active");
+    })
+    btnEjecutar.addEventListener("mouseup",()=>{
+        btnEjecutar.classList.remove("boton-active");
+    })
+
+    btnEjecutar.addEventListener("click",(evento)=>{
+        evento.preventDefault();
+        console.log(inputComando.value);
+        consolaSalida.innerHTML = comandanteController.ejecutar(inputComando.value);
+    })
+
+
+</script>
+</body>
+</html>
