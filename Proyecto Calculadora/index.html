@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container pt-3">
+        <h1>Calculadora</h1>
+    </div>
+
+    <div class="container mt-4 p-4 rounded shadow bg-custom">
+        <form id="forma">
+            <div class="row">
+                <div class="col-6">
+                    <label for="Num1" class="form-label">Operando 1:</label>
+                    <input type="number" name="Num1" id="Num1" placeholder="Escriba operando 1" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="Num2" class="form-label">Operando 2:</label>
+                    <input type="number" name="Num2" id="Num2" placeholder="Escriba operando 2" class="form-control">
+                </div>
+            </div>
+        </form>
+        <div class="row mt-4" id="botones-operacion">
+            <div class="col-3">
+                <button class="btn fw-bold btn-gradient-op w-100" id="multiplicacion">X</button>
+            </div>
+            <div class="col-3">
+                <button class="btn fw-bold btn-gradient-op w-100" id="division">/</button>
+            </div>
+            <div class="col-3">
+                <button class="btn fw-bold btn-gradient-op w-100" id="suma">+</button>
+            </div>
+            <div class="col-3">
+                <button class="btn fw-bold btn-gradient-op w-100" id="resta">-</button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <button id="btn-calcular" class="btn btn-gradient w-100 fw-bold shadow-sm">Calcular</button>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4 p-4 rounded shadow bg-custom">
+        <label class="label-resultado"><h3>El resultado de tu operación es: </h3></label>
+        <div id="divResultado"class="container w-100" id="divResultado">
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+    <script>
+        // Captura de eventos/data
+    const forma = document.getElementById("forma");
+    const grupoOperacion = document.getElementById("botones-operacion");
+    const botonesOP = grupoOperacion.querySelectorAll(".btn-gradient-op");
+    const divResultado = document.getElementById("divResultado");
+
+    grupoOperacion.addEventListener("click",(evento)=>{
+        if(evento.target.classList.contains('btn-gradient-op')){
+            botonesOP.forEach(btn => btn.classList.remove("active-op"));
+            evento.target.classList.add("active-op");
+            console.log("Se seleccionó una op");
+        }
+    });
+
+    let btnCalcular = document.getElementById("btn-calcular");
+    btnCalcular.addEventListener("click",()=>{
+        const data = new FormData(forma);
+        let n1 = Number(data.get("Num1"));
+        let n2 = Number(data.get("Num2"));
+        let resultado = 0;
+        let operacion;
+        botonesOP.forEach(btn =>{
+            if(btn.classList.contains("active-op")){
+                operacion = btn.id;
+                console.log(operacion);
+            }
+        });
+
+        switch (operacion){
+            case "multiplicacion":
+                    resultado = n1 * n2;
+                    console.log(resultado);
+                break;
+            case "division":
+                    resultado = n1 / n2;
+                    console.log(resultado);
+                break;
+            case "suma":
+                    resultado = n1 + n2;
+                    console.log(resultado);
+                break;
+            case "resta":
+                    resultado = n1 - n2;
+                    console.log(resultado);
+                break;
+        }
+        divResultado.innerHTML = resultado;
+    });
+    </script>
+</body>
+</html>

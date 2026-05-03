@@ -1,0 +1,67 @@
+/* Fondo para el contenedor principal */
+.bg-custom {
+    background-color: #f8f9fa; /* Un gris muy claro y limpio */
+    border: 1px solid #dee2e6;
+}
+
+/* Botón con estilo degradado y bordes redondeados */
+.btn-gradient {
+    background: linear-gradient(45deg, #1d976c, #93f9b9); /* Degradado verde tecnológico */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-gradient-op{
+    background: linear-gradient(45deg, #2193b0, #6dd5ed); /* Degradado verde tecnológico */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-gradient-op:hover {
+    box-shadow: 0 0 15px rgba(33, 147, 176, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Efecto Hover (Brillo) */
+.btn-gradient:hover {
+    color: white;
+    box-shadow: 0 0 15px rgba(29, 151, 108, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Efecto Active (Hundido) */
+.btn-gradient:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+.active-op {
+    border: 2px solid #004e92 !important;
+    background: #e0f0ff !important;
+    transform: scale(0.95); /* Efecto de que se quedó hundido */
+}
+.label-resultado {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #6c757d;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+#divResultado {
+    font-size: 2.5rem; /* Tamaño grande para que resalte */
+    font-weight: 800;
+    color: #004e92; /* Un azul profundo coherente con tus botones */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Courier New', Courier, monospace; /* Toque técnico tipo calculadora */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5); /* Fondo sutil para legibilidad */
+    border-radius: 10px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
