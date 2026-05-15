@@ -3,6 +3,7 @@ const formTareas = document.getElementById("form-tareas");
 const listaTareas = document.getElementById("lista-tareas");
 const templateTarea = document.getElementById("template-tarea").content;
 
+
 btnAgregar.addEventListener("click",()=>{
         let data = new FormData(formTareas);
         let prioridad = data.get("select-prioridad");
