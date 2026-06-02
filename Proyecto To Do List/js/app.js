@@ -30,9 +30,28 @@ btnAgregar.addEventListener("click",()=>{
         
         }
 
-        clonTemplate.querySelector(".btn-eliminar").addEventListener("click",()=>{console.log("Hola")});
-        clonTemplate.querySelector(".btn-editar").addEventListener("click",()=>{console.log("Hola")});
+        // clonTemplate.querySelector(".btn-eliminar").addEventListener("click",()=>{});
+        // clonTemplate.querySelector(".btn-editar").addEventListener("click",()=>{console.log("Hola")});
         listaTareas.appendChild(clonTemplate);
         formTareas.reset();
+});
+
+listaTareas.addEventListener("click",(e)=>{
+        if(e.target.classList.contains("btn-eliminar")){
+                const li = e.target.closest("li");
+                eliminarTarea(li);
+        }
+        if(e.target.classList.contains("btn-editar")){
+                const li = e.target.closest("li");
+                editarTarea
+        }
 
 });
+
+function eliminarTarea(li){
+        li.remove();
+}
+
+function editarTarea(li){
+
+}
