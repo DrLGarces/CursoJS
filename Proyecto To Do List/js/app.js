@@ -43,7 +43,14 @@ listaTareas.addEventListener("click",(e)=>{
         }
         if(e.target.classList.contains("btn-editar")){
                 const li = e.target.closest("li");
-                editarTarea
+                const span = li.querySelector(".js-nombre-tarea");
+                const btnEditar = e.target;
+                editarTarea(li,span,btnEditar);
+        }
+        if(e.target.classList.contains("btn-guardar")){
+                const li = e.target.closest("li");
+                const span = li.querySelector(".js-nombre-tarea");
+                Guardar(li);
         }
 
 });
@@ -52,6 +59,23 @@ function eliminarTarea(li){
         li.remove();
 }
 
-function editarTarea(li){
+function editarTarea(li, span, btnEditar){
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = span.textContent;
+        input.classList.add("form-control","form-comtrol-sm");
+        span.replaceWith(input);
+        btnEditar.textContent = "Guardar";
+        btnEditar.classList.remove("btn-editar");
+        btnEditar.classList.add("btn-guardar");
+}
 
+
+function Guardar(li,span){
+        const input = li.querySelector("input");
+        span.textContent = input.value;
+        input.replaceWith(span);
+        btnEditar.textContent="Editar";
+        btnEditar.classList.remove("btn-guardar");
+        btnEditar.classList.add("btn-editar");
 }
