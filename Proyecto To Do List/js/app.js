@@ -30,27 +30,26 @@ btnAgregar.addEventListener("click",()=>{
         
         }
 
-        // clonTemplate.querySelector(".btn-eliminar").addEventListener("click",()=>{});
-        // clonTemplate.querySelector(".btn-editar").addEventListener("click",()=>{console.log("Hola")});
         listaTareas.appendChild(clonTemplate);
         formTareas.reset();
 });
 
 listaTareas.addEventListener("click",(e)=>{
+        console.log("Click detectado en:", e.target.classList);
         if(e.target.classList.contains("btn-eliminar")){
                 const li = e.target.closest("li");
                 eliminarTarea(li);
         }
-        if(e.target.classList.contains("btn-editar")){
+        else if(e.target.classList.contains("btn-editar")){
                 const li = e.target.closest("li");
                 const span = li.querySelector(".js-nombre-tarea");
                 const btnEditar = e.target;
                 editarTarea(li,span,btnEditar);
         }
-        if(e.target.classList.contains("btn-guardar")){
+        else if(e.target.classList.contains("btn-guardar")){
                 const li = e.target.closest("li");
-                const span = li.querySelector(".js-nombre-tarea");
-                Guardar(li);
+                const btnEditar = e.target;
+                Guardar(li, btnEditar);
         }
 
 });
@@ -63,7 +62,7 @@ function editarTarea(li, span, btnEditar){
         const input = document.createElement("input");
         input.type = "text";
         input.value = span.textContent;
-        input.classList.add("form-control","form-comtrol-sm");
+        input.classList.add("form-control","form-control-sm");
         span.replaceWith(input);
         btnEditar.textContent = "Guardar";
         btnEditar.classList.remove("btn-editar");
@@ -71,8 +70,10 @@ function editarTarea(li, span, btnEditar){
 }
 
 
-function Guardar(li,span){
+function Guardar(li, btnEditar){
         const input = li.querySelector("input");
+        const span = document.createElement("span");
+        span.classList.add("js-nombre-tarea");
         span.textContent = input.value;
         input.replaceWith(span);
         btnEditar.textContent="Editar";
