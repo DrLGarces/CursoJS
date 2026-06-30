@@ -1,0 +1,22 @@
+.contenedor-reloj {
+    padding: 20px;
+    background-color: #00bcd4; /* Un azul cian llamativo */
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem; /* Tamaño grande para que sea legible */
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para que los números no salten */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.sombra{
+    box-shadow: 1px 3px 3px #000;
+}
+
+/* Opcional: Para darle un toque extra a los números */
+#reloj {
+    align-items: center;
+    justify-content: center;
+}

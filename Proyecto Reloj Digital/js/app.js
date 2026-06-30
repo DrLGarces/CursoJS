@@ -1,3 +1,8 @@
+const contenedorHora = document.querySelector(".contenedor-hora");
+const contenedorFecha = document.querySelector(".contenedor-fecha");
+const contenedorReloj = document.querySelector(".contenedor-reloj");
+const diasSemana = ["Lun","Mar","Mie","Jue","Vier","Sab","Dom"];
+const meses = ["Enero","Febrero","Marzo","Abril","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 function mostrarReloj() {
     const fecha = new Date();
     
@@ -16,13 +21,21 @@ function mostrarReloj() {
     let segundosStr = segundos.toString();
     segundosStr = segundosStr.padStart(2,'0');
 
+    let diaSemana = diasSemana[fecha.getDay()];
+    let mes = meses[fecha.getMonth()];
+    let diaMes = fecha.getDate();
 
-
+    let fechaFormateada = `${diaSemana}, ${diaMes} de ${mes}`;
     // Formato de cadena de texto
     const horaFormateada = `${horasStr}:${minutosStr}:${segundosStr}`;
-    console.log(horaFormateada);
+
+    contenedorHora.innerHTML = horaFormateada;
+    contenedorFecha.innerHTML = fechaFormateada;
+
+    contenedorReloj.classList.toggle("sombra");
 }
-
 mostrarReloj();
-
 setInterval(mostrarReloj,1000);
+
+
+
