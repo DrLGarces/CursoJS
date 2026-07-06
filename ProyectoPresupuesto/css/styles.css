@@ -1,0 +1,125 @@
+/* 1. IMPORTAMOS LA FUENTE DESDE GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    /* Aplicamos la nueva tipografía limpia y moderna */
+    font-family: 'Inter', sans-serif; 
+    color: #334155;
+    background-color: #f8f9fa; /* Fondo general de la app */
+}
+
+header {
+    width: 100%;
+    background-color: #1e293b; /* Nuevo color azul pizarra oscuro */
+    padding: 24px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+header h1 {
+    margin: 0;                  
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ffffff;      
+}
+
+.container {
+    flex-grow: 1;
+    padding: 35px 20px;
+    max-width: 1200px; /* Evita que la app se estire demasiado en monitores gigantes */
+    margin: 0 auto;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px; /* Un espacio un poco más amplio y elegante */
+    margin-bottom: 24px;
+}
+
+/* 2. DISEÑO COHESIVO PARA LAS TARJETAS */
+.saldos {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px; /* Bordes un poco más redondeados (estilo moderno) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Modificadores específicos para cada tipo de tarjeta */
+.saldo-actual {
+    flex: 0 0 100%;
+    font-weight: 700;
+    font-size: 1.4rem;
+    border-left: 5px solid #6366f1; /* Detalle elegante de color índigo */
+}
+
+.contenedor-ingresos {
+    flex: 0 0 48%;
+    border-top: 4px solid #10b981; /* Línea verde arriba */
+}
+.contenedor-ingresos span {
+    color: #10b981; /* Texto "Ingresos:" en verde */
+    font-weight: 600;
+}
+
+.contenedor-egresos {
+    flex: 0 0 48%;
+    border-top: 4px solid #ef4444; /* Línea roja arriba */
+}
+.contenedor-egresos span {
+    color: #ef4444; /* Texto "Egresos:" en rojo */
+    font-weight: 600;
+}
+
+/* 3. ESTILOS PARA TU NUEVO FORMULARIO HORIZONTAL */
+.contenedor-form {
+    width: 100%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.formulario {
+    border-radius: 8px !important;
+}
+
+/* Estilo para el botón emoji */
+form .btn-secondary {
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    font-size: 1.2rem;
+    padding: 12px;
+    transition: background 0.2s;
+}
+form .btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+.contenedor-saldos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px; /* Espacio limpio entre ambas tablas */
+    width: 100%
+}
+.tabla-columna {
+    flex: 0 0 48%; /* Cada una ocupa el 48% del ancho, simulando un col-6 perfecto */
+}
