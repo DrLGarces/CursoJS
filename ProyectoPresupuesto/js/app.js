@@ -6,9 +6,6 @@ const contenedorEgresos = document.querySelector(".contenedor-egresos");
 const formMovimientos = document.getElementById("form-movimiento");
 const btnAgregar = document.getElementById("btnAgregar");
 
-let tx1 = new Movimiento("Ingreso","Sueldo",300);
-let tx2 = new Movimiento("Egreso", "Comida",120);
-
 const actualizar = () =>{
     let formatoSaldoActual = `$${Movimiento.saldoActual}`;
     saldoActual.innerHTML = formatoSaldoActual; 
