@@ -27,25 +27,29 @@
         </div>
         <div class="row">
             <div class="contenedor-form">
-                <form>
+                <form id="form-movimiento">
                     <div class="form-floating">
-                        <select id="tipo" class="formulario form-select" >
-                            <option selected>Tipo de movimiento</option>
-                            <option value="Ingreso">Ingreso</option>
+                        <select id="tipo" name="tipo" class="formulario form-select" >
+                            <option selected value="Ingreso">Ingreso</option>
                             <option value="Egreso">Egreso</option>
                         </select>
-                        <label for="tipo">Tipo</label>
+                        <label for="tipo">Tipo de movimiento</label>
                     </div>
                 
+
                     <div class="form-floating">
-                        <input class="formulario form-control" type="text" id="descripcion" placeholder="Salario">
+                        <input class="formulario form-control" type="text" id="descripcion" name="descripcion" placeholder="Salario">
                         <label for="descripcion" class="form-label">Descripción</label>
                     </div>
+
+
                     <div class="form-floating">
-                        <input class="formulario form-control" type="number" id="monto" placeholder="200">
+                        <input class="formulario form-control" type="number" id="monto" placeholder="200" name="monto">
                         <label for="monto" class="form-label">Monto</label>
                     </div>
-                    <input class="formulario btn btn-secundary" type="submit" value="✅">
+
+
+                    <input id="btnAgregar"class="formulario btn btn-secundary" type="submit" value="✅">
                 </form>
             </div>
         </div>

@@ -1,16 +1,16 @@
 //Movimiento.js
 
 export default class Movimiento{
-    static ingresos = 0;
-    static egresos = 0;
+    static _ingresos = 0;
+    static _egresos = 0;
     constructor(tipo, descripcion, monto){
         this._tipo = tipo;
         this._descripcion = descripcion;
-        this._monto = monto;
+        this._monto = Number(monto);
         if(tipo == "Ingreso"){
-            Movimiento.ingresos += monto;
+            Movimiento._ingresos += monto;
         }else if(tipo == "Egreso"){
-            Movimiento.egresos +=monto;
+            Movimiento._egresos +=monto;
         }
 
     }
@@ -19,11 +19,11 @@ export default class Movimiento{
     }
 
     static get ingresos(){
-        return Movimiento.ingresos;
+        return Movimiento._ingresos;
     }
 
     static get egresos(){
-        return Movimiento.egresos;
+        return Movimiento._egresos;
     }
     
 
