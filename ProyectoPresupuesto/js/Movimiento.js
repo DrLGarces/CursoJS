@@ -41,6 +41,13 @@ export default class Movimiento{
     get Tipo(){
         return this._tipo;
     }
+    static restarValores(tipo, monto) {
+    if (tipo === "Ingreso") {
+        Movimiento._ingresos -= monto;
+    } else if (tipo === "Egreso") {
+        Movimiento._egresos -= monto;
+    }
+}
 
 }
 
