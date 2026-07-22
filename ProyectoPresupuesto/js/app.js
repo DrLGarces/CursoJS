@@ -9,6 +9,10 @@ const tablaIngresos = document.getElementById("tabla-ingresos");
 const tablaEgresos = document.getElementById("tabla-egresos");
 let listaMovimientos = [];
 
+const formatoMoneda = (valor) => {
+    return valor.toLocaleString('en-US',{style:'currency', currency:'USD',minimumFractionDigits:2});
+}
+
 const configurarBotonesElim = ()=>{
     const botonesEliminar = document.querySelectorAll(".btn-eliminar");
 
@@ -28,13 +32,13 @@ const configurarBotonesElim = ()=>{
 
 
 const actualizar = () =>{
-    let formatoSaldoActual = `$${Movimiento.saldoActual}`;
+    let formatoSaldoActual = `${formatoMoneda(Movimiento.saldoActual)}`;
     saldoActual.innerHTML = formatoSaldoActual; 
 
-    let formatoIngresos = `$${Movimiento.ingresos}`;
+    let formatoIngresos = `${formatoMoneda(Movimiento.ingresos)}`;
     contenedorIngresos.innerHTML = formatoIngresos;
 
-    let formatoEgresos = `$${Movimiento.egresos}`;
+    let formatoEgresos = `${formatoMoneda(Movimiento.egresos)}`;
     contenedorEgresos.innerHTML = formatoEgresos;
 
     tablaIngresos.innerHTML = "";
@@ -61,13 +65,12 @@ const actualizar = () =>{
 
 actualizar();
 
-btnAgregar.addEventListener("click",(e)=>{
+formMovimientos.addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = new FormData(formMovimientos);
     let tipo = data.get("tipo");
     let descripcion = data.get("descripcion");
     let monto = Number(data.get("monto"));
-
     if(descripcion && monto) {
         let movimiento = new Movimiento(tipo, descripcion, monto);
         listaMovimientos.push(movimiento);
@@ -75,6 +78,7 @@ btnAgregar.addEventListener("click",(e)=>{
         formMovimientos.reset(); 
     }
 });
+
 
 
 

@@ -29,7 +29,7 @@
             <div class="contenedor-form">
                 <form id="form-movimiento">
                     <div class="form-floating">
-                        <select id="tipo" name="tipo" class="formulario form-select" >
+                        <select id="tipo" name="tipo" class="formulario form-select" required="true">
                             <option selected value="Ingreso">Ingreso</option>
                             <option value="Egreso">Egreso</option>
                         </select>
@@ -38,13 +38,13 @@
                 
 
                     <div class="form-floating">
-                        <input class="formulario form-control" type="text" id="descripcion" name="descripcion" placeholder="Salario">
+                        <input class="formulario form-control" type="text" id="descripcion" name="descripcion" placeholder="Salario" required="true">
                         <label for="descripcion" class="form-label">Descripción</label>
                     </div>
 
 
                     <div class="form-floating">
-                        <input class="formulario form-control" type="number" id="monto" placeholder="200" name="monto">
+                        <input class="formulario form-control" type="number" id="monto" placeholder="200" name="monto" required="true">
                         <label for="monto" class="form-label">Monto</label>
                     </div>
 
